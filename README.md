@@ -1,10 +1,10 @@
-# GitHub Action for Aliyun certificate deployment
+# GitHub Action for Aliyun WAF certificate deployment
 
-Deploy SSL certificate to Aliyun Certificates Service (and use in CDN).
+Deploy SSL certificate to Aliyun WAF.
 
 # Usage
 
-> If you need to issue SSL certificates automatically, you can use [my acme.sh action](https://github.com/marketplace/actions/issue-ssl-certificate).
+> If you need to issue SSL certificates automatically, you can use [enroll acme.sh action](https://github.com/marketplace/actions/issue-ssl-certificate).
 
 This action will deploy your PEM-formatted SSL certificate to Aliyun Certificates Service. And then set to use this certificate in CDN (optional).
 
@@ -22,7 +22,7 @@ jobs:
           # If you just commited and pushed your newly issued certificate to this repo in a previous job,
           # use `ref` to make sure checking out the newest commit in this job
           ref: ${{ github.ref }}
-      - uses: Menci/deploy-certificate-to-aliyun@beta-v1
+      - uses: tls-deploy-actions/alibabacloud-waf@v1
         with:
           # Use Access Key
           access-key-id: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
@@ -35,12 +35,9 @@ jobs:
           # Specify PEM private key file
           key-file: ${{ env.FILE_KEY }}
 
-          # The name in Aliyun Certificates Service
-          # Will replace the old one with the same name
-          certificate-name: My-SSL
-
           # (Optional) Deploy to CDN
-          cdn-domains: |
-            cdn1.example.com
-            cdn2.example.com
+          waf-domains: |
+            waf1.example.com
+            waf2.example.com
+            *.waf3.example.com
 ```
