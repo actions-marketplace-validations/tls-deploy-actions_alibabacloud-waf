@@ -1,4 +1,4 @@
-name: Deploy SSL certificate to Aliyun
+name: Deploy SSL certificate to AlibabaCloud WAF
 description: Deploy SSL certificate to Aliyun Certificates Service (and use in WAF).
 branding:
   icon: lock
@@ -23,7 +23,7 @@ inputs:
     description: Enter a list of WAF domains you want to deploy the certificate to.
     required: true
   waf-instance-id:
-    description: Enter a list of WAF domains you want to deploy the certificate to.
+    description: InstanceId of AlibabaCloud WAF
     required: true
 runs:
   using: node16
