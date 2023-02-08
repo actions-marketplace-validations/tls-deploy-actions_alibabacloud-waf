@@ -6,7 +6,7 @@ Deploy SSL certificate to Aliyun WAF.
 
 > If you need to issue SSL certificates automatically, you can use [enroll acme.sh action](https://github.com/marketplace/actions/issue-ssl-certificate).
 
-This action will deploy your PEM-formatted SSL certificate to Aliyun Certificates Service. And then set to use this certificate in CDN (optional).
+This action will deploy your PEM-formatted SSL certificate to WAF.
 
 According to Aliyun API, both Access Keys and STS Token are accepted as credentials.
 
@@ -35,7 +35,7 @@ jobs:
           # Specify PEM private key file
           key-file: ${{ env.FILE_KEY }}
 
-          # (Optional) Deploy to CDN
+          # (Optional) Deploy to WAF
           waf-domains: |
             waf1.example.com
             waf2.example.com
