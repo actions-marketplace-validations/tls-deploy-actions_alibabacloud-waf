@@ -1,5 +1,5 @@
 {
-  "name": "deploy-certificate-to-aliyun",
+  "name": "tls-deploy-actions-alibabacloud-waf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
