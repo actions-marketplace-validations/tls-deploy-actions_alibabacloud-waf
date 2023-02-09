@@ -35,7 +35,7 @@ function callAliyunApi(endpoint, apiVersion, action, params) {
       : {}),
     endpoint,
     apiVersion,
-  }).request(action, params, { method: "POST" });
+  }).request(action, params, { method: "POST", timeout: 60000 });
 }
 
 async function deployCertificateToWaf() {
