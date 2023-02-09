@@ -22,7 +22,7 @@ jobs:
           # If you just commited and pushed your newly issued certificate to this repo in a previous job,
           # use `ref` to make sure checking out the newest commit in this job
           ref: ${{ github.ref }}
-      - uses: tls-deploy-actions/alibabacloud-waf@v1
+      - uses: tls-deploy-actions/alibabacloud-waf@v2
         with:
           # Use Access Key
           access-key-id: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
