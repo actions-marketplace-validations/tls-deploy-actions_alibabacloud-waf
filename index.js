@@ -12,6 +12,7 @@ const input = {
   keyFile: core.getInput("key-file"),
   wafDomains: core.getInput("waf-domains"),
   wafInstanceId: core.getInput("waf-instance-id"),
+  wafRegionHost: core.getInput('waf-region-host') || "https://wafopenapi.cn-hangzhou.aliyuncs.com",
 };
 
 /**
@@ -49,7 +50,7 @@ async function deployCertificateToWaf() {
     console.log(`Deploying certificate to WAF domain ${domain}.`);
 
     await callAliyunApi(
-      "https://wafopenapi.cn-hangzhou.aliyuncs.com",
+      input.wafRegionHost,
       "2019-09-10",
       "CreateCertificate",
       {

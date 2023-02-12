@@ -24,6 +24,8 @@ jobs:
           ref: ${{ github.ref }}
       - uses: tls-deploy-actions/alibabacloud-waf@v2
         with:
+          # Specify WAF region host, default is "https://wafopenapi.cn-hangzhou.aliyuncs.com"
+          # waf-region-host: "https://wafopenapi.ap-southeast-1.aliyuncs.com"
           # Use Access Key
           access-key-id: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
