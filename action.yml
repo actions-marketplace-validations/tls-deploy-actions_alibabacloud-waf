@@ -4,6 +4,9 @@ branding:
   icon: lock
   color: green
 inputs:
+  waf-region-host:
+    description: The Web Application Firewall region host.
+    default: 'https://wafopenapi.cn-hangzhou.aliyuncs.com'
   access-key-id:
     description: The accessKeyId used to authenticate with Aliyun. Please specify `access-key-id` and `access-key-secret` or specify `security-token`.
     default: ''
